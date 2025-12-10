@@ -1,22 +1,17 @@
-package com.fitness.activityservice.model;
+package com.fitness.activityservice.dto.response;
 
 import com.fitness.activityservice.Enum.ActivityType;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDateTime;
 import java.util.Map;
 
-@Document(collation = "activities")
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Builder
-public class Activity {
+public class ActivityResponse {
 
     private String id;
 
@@ -30,12 +25,9 @@ public class Activity {
 
     private LocalDateTime startTime;
 
-    @Field(name = "metrics")
     private Map<String,Object> addtionalMetrics;
 
-    @CreatedDate
     private LocalDateTime createdAt;
 
-    @LastModifiedDate
     private LocalDateTime updatedAt;
 }

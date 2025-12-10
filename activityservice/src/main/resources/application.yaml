@@ -3,8 +3,8 @@ spring:
    name:activityservice
   data:
     mongodb:
-      uri:mongodb://localhost:27017/activityservice
-      database:activityservice
+      uri: mongodb://localhost:27017/activityservice
+      database: activityservice
 
 server:
-  port:8082
+  port: 8086
