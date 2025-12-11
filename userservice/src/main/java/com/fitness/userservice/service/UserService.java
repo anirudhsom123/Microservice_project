@@ -39,4 +39,9 @@ public class UserService {
 
         return UserTransformer.userToUserResponse(user);
     }
+
+    public Boolean validateUser(String userId) {
+
+        return userRepository.existsById(userId);
+    }
 }

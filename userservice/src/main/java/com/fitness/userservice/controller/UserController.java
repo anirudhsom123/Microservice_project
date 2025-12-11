@@ -30,6 +30,10 @@ public class UserController {
         }catch (UserNotFoundException e){
             return new ResponseEntity(e.getMessage(),HttpStatus.NOT_FOUND);
         }
+    }
+    @GetMapping("/validate/{userId}")
+    public ResponseEntity<Boolean> validateUser(@PathVariable("userId") String userId){
 
+        return ResponseEntity.ok(userService.validateUser(userId));
     }
 }
