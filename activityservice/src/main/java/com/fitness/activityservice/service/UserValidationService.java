@@ -11,8 +11,15 @@ public class UserValidationService {
 
     private final WebClient userServiceWebClient;
 
+    private final UserValidationService userValidationService;
+
     public  Boolean validateUser(String userId){
 
+        boolean isValidUser = userValidationService.validateUser(userId);
+
+        if(!isValidUser){
+            throw new RuntimeException("Invalid User ID"+userId);
+        }
         try{
             return userServiceWebClient
                     .get()
