@@ -31,7 +31,7 @@ public class UserController {
             return new ResponseEntity(e.getMessage(),HttpStatus.NOT_FOUND);
         }
     }
-    @GetMapping("/validate/{userId}")
+    @GetMapping("/{userId}/validate")
     public ResponseEntity<Boolean> validateUser(@PathVariable("userId") String userId){
 
         return ResponseEntity.ok(userService.validateUser(userId));

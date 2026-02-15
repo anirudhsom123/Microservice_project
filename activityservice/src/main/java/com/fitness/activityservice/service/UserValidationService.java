@@ -22,10 +22,11 @@ public class UserValidationService {
                     .bodyToMono(Boolean.class)
                     .block();
         } catch (WebClientResponseException e) {
-            if (e.getStatusCode() == HttpStatus.NOT_FOUND)
-                throw new RuntimeException("User Not Found: " + userId);
-            else if (e.getStatusCode() == HttpStatus.BAD_REQUEST)
-                throw new RuntimeException("Invalid Request: " + userId);
+//            if (e.getStatusCode() == HttpStatus.NOT_FOUND)
+//                throw new RuntimeException("User Not Found: " + userId);
+//            else if (e.getStatusCode() == HttpStatus.BAD_REQUEST)
+//                throw new RuntimeException("Invalid Request: " + userId);
+            e.printStackTrace();
         }
         return false;
     }
