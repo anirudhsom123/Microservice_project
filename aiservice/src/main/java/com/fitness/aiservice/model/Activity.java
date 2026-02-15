@@ -1,9 +1,8 @@
-package com.fitness.activityservice.model;
+package com.fitness.aiservice.model;
 
 import com.fitness.activityservice.Enum.ActivityType;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -11,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-@Document(collation = "activities")
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -19,7 +18,6 @@ import java.util.Map;
 @Builder
 public class Activity {
 
-    @Id
     private String id;
 
     private String userId;
