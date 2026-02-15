@@ -7,12 +7,14 @@ import com.fitness.userservice.exceptions.UserNotFoundException;
 import com.fitness.userservice.model.User;
 import com.fitness.userservice.transformer.UserTransformer;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class UserService {
 
     private UserRepository userRepository;
@@ -41,7 +43,7 @@ public class UserService {
     }
 
     public Boolean validateUser(String userId) {
-
+        log.info("calling user service for {}",userId);
         return userRepository.existsById(userId);
     }
 }

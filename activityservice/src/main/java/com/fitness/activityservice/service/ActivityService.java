@@ -13,12 +13,13 @@ import org.springframework.stereotype.Service;
 public class ActivityService {
 
     private final ActivityRepository activityRepository;
-    private final UserValidationService userValidationService;
+ private final UserValidationService userValidationService;
 
 
     public ActivityResponse trackActivity(ActivityRequest activityRequest) {
 
-       boolean isValid = userValidationService.validateUser(activityRequest.getUserId());
+         boolean isValid = userValidationService.validateUser(activityRequest.getUserId());
+         System.out.println(isValid);
 
        if(!isValid){
            throw new RuntimeException("invaild user id" + activityRequest.getUserId());
