@@ -22,20 +22,14 @@ public class Activity {
 
     private String userId;
 
-    private ActivityType activityType;
+    private ActivityType Type;
 
     private Integer duration;
 
     private Integer caloriesBurned;
 
     private LocalDateTime startTime;
-
-    @Field(name = "metrics")
-    private Map<String,Object> addtionalMetrics;
-
-    @CreatedDate
+    private Map<String,Object> additionalMetrics;
     private LocalDateTime createdAt;
-
-    @LastModifiedDate
     private LocalDateTime updatedAt;
 }

@@ -25,7 +25,7 @@ public class ActivityService {
     public ActivityResponse trackActivity(ActivityRequest activityRequest) {
 
          boolean isValid = userValidationService.validateUser(activityRequest.getUserId());
-         System.out.println(isValid);
+//         System.out.println(isValid);
 
        if(!isValid){
            throw new RuntimeException("invaild user id" + activityRequest.getUserId());
