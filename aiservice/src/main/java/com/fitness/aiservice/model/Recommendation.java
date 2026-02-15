@@ -1,5 +1,6 @@
 package com.fitness.aiservice.model;
 
+import com.fitness.activityservice.Enum.ActivityType;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -20,6 +21,7 @@ public class Recommendation {
     private String id;
     private String activityId;
     private  String userId;
+    private ActivityType Type;
     private String recommendation;
     private List<String> improvements;
     private List<String> suggestions;
