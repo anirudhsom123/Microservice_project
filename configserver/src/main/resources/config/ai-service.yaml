@@ -1,0 +1,37 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/airecommendationfitness
+      database: airecommendationfitness
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      # Unique ID for the consumer group
+      group-id: activity-processor-group
+      # Deserializers
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.use.type.headers: false
+        # Trust your package so Spring can convert JSON back to your Model
+        spring.json.trusted.packages: "*"
+        # Optional: Handle the type mapping if sent from another service
+        # spring.json.value.default.type: "com.fitness.aiservice.model.Recommendation"
+        spring.json.value.default.type: com.fitness.aiservice.model.Activity
+
+kafka:
+  topic:
+    name: activity-events
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8083
+
+gemini:
+  api:
+    url: ${GEMINI_URL}
+    key: ${GEMINI_KEY}
